@@ -69,6 +69,7 @@ function install_ikev2(){
     configure_ipsec
     configure_strongswan
     configure_secrets
+    configure_radius_server
     SNAT_set
     iptables_check
     ipsec restart
@@ -154,6 +155,21 @@ function pre_install(){
     if [ "$vps_ip" = "" ]; then
         vps_ip=$IP
     fi
+    echo "please enter radius server ip address:"
+    read -p "radius server ip:" radius_server
+    echo "please enter radius server secret:"
+    read -p "radius server secret:" radius_secret
+    echo "please input the dns server 1 ip address(default is 8.8.8.8):"
+    read -p "dns server 1:" dns_1
+    if [ "$dns_1" = "" ]; then
+        dns_1=8.8.8.8
+    fi
+    echo "please input the dns server 2 ip address(default is 8.8.4.4):"
+    read -p "dns server 2:" dns_2
+    if [ "$dns_2" = "" ]; then
+        dns_2=8.8.4.4
+    fi
+
 
     echo "Would you want to import existing cert? You NEED copy your cert file to the same directory of this script"
     read -p "yes or no?(default_value:no):" have_cert
@@ -414,8 +430,8 @@ function configure_strongswan(){
         plugins {
                 include strongswan.d/charon/*.conf
         }
-        dns1 = 8.8.8.8
-        dns2 = 8.8.4.4
+        dns1 = ${dns_1}
+        dns2 = ${dns_2}
         nbns1 = 8.8.8.8
         nbns2 = 8.8.4.4
 }
@@ -430,6 +446,27 @@ function configure_secrets(){
 : PSK "myPSKkey"
 : XAUTH "myXAUTHPass"
 myUserName %any : EAP "myUserPass"
+EOF
+}
+
+# configure the eap-radius.conf
+function configure_secrets(){
+    cat > /usr/local/etc/strongswan.d/charon/eap-radius.conf<<-EOF
+eap-radius {
+    load = yes
+    dae {
+    }
+    forward {
+    }
+    servers {
+            server_a {
+                            address = ${radius_server}
+                            secret = ${radius_secret}
+                            }
+    }
+    xauth {
+    }
+}
 EOF
 }
 
