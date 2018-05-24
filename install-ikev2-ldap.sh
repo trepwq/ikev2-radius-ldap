@@ -2,19 +2,19 @@
 PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:~/bin
 export PATH
 #===============================================================================================
-#   System Required:  CentOS6.x/7 (32bit/64bit) or Ubuntu
+#   System Required:  CentOS6.x/7 (32bit/64bit) or Ubuntu 16.04
 #   Description:  Install IKEV2 VPN for CentOS and Ubuntu
-#   Author: quericy
-#   Intro:  https://quericy.me/blog/699
+#   Author: trepwq
+#   Intro:  https://willnet.net
 #===============================================================================================
 
 clear
-VER=1.2.0
+VER=1.0.0
 echo "#############################################################"
-echo "# Install IKEV2 VPN for CentOS6.x/7 (32bit/64bit) or Ubuntu or Debian7/8.*"
-echo "# Intro: https://quericy.me/blog/699"
+echo "# Install IKEV2 VPN for CentOS6.x/7 (32bit/64bit) or Ubuntu 16.04 or Debian7/8.*"
+echo "# Intro: https://willnet.net"
 echo "#"
-echo "# Author:quericy"
+echo "# Author:trepwq"
 echo "#"
 echo "# Version:$VER"
 echo "#############################################################"
@@ -129,10 +129,10 @@ function get_my_ip(){
 # Pre-installation settings
 function pre_install(){
     echo "#############################################################"
-    echo "# Install IKEV2 VPN for CentOS6.x/7 (32bit/64bit) or Ubuntu or Debian7/8.*"
-    echo "# Intro: https://quericy.me/blog/699"
+    echo "# Install IKEV2 VPN for CentOS6.x/7 (32bit/64bit) or Ubuntu 16.04 or Debian7/8.*"
+    echo "# Intro: https://willnet.net"
     echo "#"
-    echo "# Author:quericy"
+    echo "# Author:trepwq"
     echo "#"
     echo "# Version:$VER"
     echo "#############################################################"
