@@ -158,7 +158,7 @@ function pre_install(){
     echo "please enter radius server ip address:"
     read -p "radius server ip:" radius_server
     if [ "$radius_server" = "" ]; then
-        echo "you must enter a ip address!"
+        echo "you must enter an ip address!"
         exit 1
     fi
     echo "please enter radius server secret:"
