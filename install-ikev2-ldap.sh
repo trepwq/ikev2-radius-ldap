@@ -208,6 +208,10 @@ function pre_install(){
     echo ""
     echo -e "the type of your server: [$(__green $os_str)]"
     echo -e "the ip(or domain) of your server: [$(__green $vps_ip)]"
+    echo -e "the radius server: [$(__green $radius_server)]"
+    echo -e "the radius server secret: [$(__green $radius_secret)]"
+    echo -e "the dns server 1: [$(__green $dns_1)]"
+    echo -e "the dns server 2: [$(__green $dns_2)]"
     if [ "$have_cert" = "1" ]; then
         echo -e "$(__yellow "These are the certificate you MUST be prepared:")"
         echo -e "[$(__green "ca.cert.pem")]:The CA cert or the chain cert."
