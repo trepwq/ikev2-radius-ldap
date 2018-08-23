@@ -407,7 +407,7 @@ conn ios_ikev2
     rightauth=eap-radius
     rightsourceip=10.31.2.0/24
     rightsendcert=never
-    eap_identity=%any
+    eap_identity=%identity
     dpdaction=clear
     fragmentation=yes
     auto=add
