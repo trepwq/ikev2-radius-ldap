@@ -451,14 +451,14 @@ EOF
 function configure_secrets(){
     cat > /usr/local/etc/ipsec.secrets<<-EOF
 : RSA server.pem
-: PSK "myPSKkey"
-: XAUTH "myXAUTHPass"
-myUserName %any : EAP "myUserPass"
+#: PSK "myPSKkey"
+#: XAUTH "myXAUTHPass"
+#myUserName %any : EAP "myUserPass"
 EOF
 }
 
 # configure the eap-radius.conf
-function configure_secrets(){
+function configure_radius_server(){
     cat > /usr/local/etc/strongswan.d/charon/eap-radius.conf<<-EOF
 eap-radius {
     load = yes
