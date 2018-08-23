@@ -5,3 +5,5 @@ referer ：https://quericy.me/blog/699/</br>
 改写自https://quericy.me/blog/699/</br>
 thanks to quericy</br>
 感谢quericy</br>
+more info https://www.willnet.net/index.php/archives/100/</br>
+更多详情访问https://www.willnet.net/index.php/archives/100/</br>
