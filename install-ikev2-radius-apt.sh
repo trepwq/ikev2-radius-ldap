@@ -154,7 +154,7 @@ function pre_install(){
     cd $cur_dir
 }
 function install_strongswan(){
-    apt-get -y install strongswan
+    apt-get -y install strongswan libstrongswan-extra-plugins
 }
 # configure cert and key
 function get_key(){
@@ -382,7 +382,6 @@ EOF
 # echo the success info
 function success_info(){
     echo "#############################################################"
-    echo -e "#"
     echo -e "# [$(__green "Install Complete")]"
     echo -e "#############################################################"
     echo -e ""
@@ -390,5 +389,3 @@ function success_info(){
 
 # Initialization step
 install_ikev2
-
-
