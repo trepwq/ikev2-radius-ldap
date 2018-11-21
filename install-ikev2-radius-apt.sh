@@ -384,8 +384,6 @@ function success_info(){
     echo "#############################################################"
     echo -e "#"
     echo -e "# [$(__green "Install Complete")]"
-    echo -e "# you don't need to install cert if it's be trusted."
-    echo -e "#"
     echo -e "#############################################################"
     echo -e ""
 }
